@@ -10,15 +10,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   // set up game board & corresponding elements
   const map = [
-  [1,1,1,1,1,1,1,1,1,1,1,1,1],
-  [1,2,2,2,2,2,1,2,2,2,2,2,1],
-  [1,2,1,1,1,2,1,2,1,1,1,2,1],
-  [1,2,1,2,2,2,2,2,2,2,1,2,1],
-  [1,2,2,2,1,1,5,1,1,2,2,2,1],
-  [1,2,1,2,2,2,2,2,2,2,1,2,1],
-  [1,2,1,1,2,2,1,2,2,1,1,2,1],
-  [1,2,2,2,2,2,1,2,2,2,2,2,1],
-  [1,1,1,1,1,1,1,1,1,1,1,1,1]
+  [1,1,1,1,1,1,1,1,1,1,1,1,1,8],
+  [1,2,2,2,2,2,1,2,2,2,2,2,1,8],
+  [1,2,1,1,1,2,1,2,1,1,1,2,1,8],
+  [1,2,1,2,2,2,2,2,2,2,1,2,1,8],
+  [1,2,2,2,1,1,5,1,1,2,2,2,1,8],
+  [1,2,1,2,2,2,2,2,2,2,1,2,1,8],
+  [1,2,1,1,2,2,1,2,2,1,1,2,1,8],
+  [1,2,2,2,2,2,1,2,2,2,2,2,1,8],
+  [1,1,1,1,1,1,1,1,1,1,1,1,1,8]
 ]
 
   //render pacman world
@@ -32,8 +32,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
           world.innerHTML += "<div class='wall'></div>"
         } else if(map[y][x] === 2){
           world.innerHTML += "<div class='coin'></div>"
+        } else if(map[y][x]===3){
+          world.innerHTML += "<div class='ground'></div>"
         } else if(map[y][x] === 5){
           world.innerHTML += "<div class='pacman'></div>"
+        } else if(map[y][x] === 8){
+          world.innerHTML += "<br>"
         }
       }
     }
