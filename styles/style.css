@@ -3,31 +3,36 @@
   outline: 1px dotted purple;
   }
 
+/*#pacman-world {
+  height: 70%;
+  width: 80%;
+}*/
+
 .wall {
-  width: 10vh;
-  height: 10vh;
+  width: 30px;
+  height: 30px;
   background-color: blue;
   display: inline-block;
 }
 
 .coin {
-  width: 10vh;
-  height: 10vh;
+  width: 30px;
+  height: 30px;
   background-color: black;
-  border-radius: 50%;
+  border-radius: 80%;
   display: inline-block;
 }
 
 .ground {
-  width: 10vh;
-  height: 10vh;
+  width: 30px;
+  height: 30px;
   background-color: black;
   display: inline-block;
 }
 
 .pacman {
-  width: 10vh;
-  height: 10vh;
+  width: 30px;
+  height: 30px;
   background-image: url('../images/pacman.png');
   background-repeat: no-repeat;
   background-position: center;
