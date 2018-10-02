@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   //get high score users
 
-  //pacman position
+  // pacman position
   // const pacman = {
   // x: 6,
   // y: 4
@@ -51,22 +51,57 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
   renderWorld();
 
+  let newPacman = new Pacman(86,0)
 
-  //listen for keydown, arrow UP
   document.addEventListener("keydown", (event)=>{
-    let newPacman = new Pacman(86,0)
     const keyName = event.key
     console.log(keyName)
+
     if(event.key === "ArrowUp"){
       let oldPosition = document.getElementById(newPacman.position)
-      newPacman.position = (newPacman.position - 19)
-      let newPosition = document.getElementById(newPacman.position)
-      oldPosition.removeAttribute("class")
-      newPosition.removeAttribute("class")
-      oldPosition.className = 'ground'
-      newPosition.className = 'pacman'
-      //register what the position class is
-
+      let predictivePosition = document.getElementById(newPacman.position-19)
+      if (predictivePosition.className !== "wall"){
+        newPacman.position = parseInt(predictivePosition.id)
+        oldPosition.removeAttribute("class")
+        predictivePosition.removeAttribute("class")
+        oldPosition.className = 'ground'
+        predictivePosition.className = 'pacman'
+        //currently leaves pacman div if it hits a wall
+        //account for coins
+      }
+    } else if (event.key === "ArrowDown"){
+      let oldPosition = document.getElementById(newPacman.position)
+      let predictivePosition = document.getElementById(newPacman.position+19)
+      if (predictivePosition.className !== "wall"){
+        newPacman.position = parseInt(predictivePosition.id)
+        console.log(oldPosition)
+        console.log(predictivePosition)
+        console.log(newPacman)
+        oldPosition.removeAttribute("class")
+        predictivePosition.removeAttribute("class")
+        oldPosition.className = 'ground'
+        predictivePosition.className = 'pacman'
+      }
+    } else if(event.key === "ArrowRight"){
+      let oldPosition = document.getElementById(newPacman.position)
+      let predictivePosition = document.getElementById(newPacman.position+1)
+      if (predictivePosition.className !== "wall"){
+        newPacman.position = parseInt(predictivePosition.id)
+        oldPosition.removeAttribute("class")
+        predictivePosition.removeAttribute("class")
+        oldPosition.className = 'ground'
+        predictivePosition.className = 'pacman'
+      }  
+    } else if(event.key === "ArrowLeft"){
+      let oldPosition = document.getElementById(newPacman.position)
+      let predictivePosition = document.getElementById(newPacman.position-1)
+      if (predictivePosition.className !== "wall"){
+        newPacman.position = parseInt(predictivePosition.id)
+        oldPosition.removeAttribute("class")
+        predictivePosition.removeAttribute("class")
+        oldPosition.className = 'ground'
+        predictivePosition.className = 'pacman'
+      }
     }
   })
 
