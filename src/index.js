@@ -17,11 +17,37 @@ document.addEventListener('DOMContentLoaded', (event) => {
   //render pacman world
   const world = document.getElementById("pacman-world")
 
-  // render form for username
-    // on submit, renderWorld()
+///////////////////COMMMENT BACK IN FOR BACK END ////////////////////////////
 
+// const userId = document.getElementById("highscores").dataset.id
   // world.innerHTML = User.renderForm();
+  //
+  // document.addEventListener("click", (event)=>{
+  //   if (event.target.id === "user-submit"){
+  //     const newUserForm = document.getElementById("player")
+  //     const userName = document.getElementById("username").value
+  //     fetch(`http://localhost:3000/users`, {
+  //       method: 'POST',
+  //       headers: {
+  //         'Accept': 'application/json',
+  //         'Content-Type': 'application/json'
+  //       },
+  //       body: JSON.stringify({
+  //         name: userName,
+  //         high_score: 0
+  //       })
+  //     })
+  //     .then(response => response.json())
+  //     .then((jsonUser) =>{
+  //       const newUser = new User(jsonUser)
+  //       const highscores = document.getElementById("highscores")
+  //       highscores.dataset.id = newUser.id
+  //     })
+  //     renderWorld();
+  //   }
+  // })
 
+////////////////////////////////////////////////////////////////////////////////////
 
   // 1 -- wall
   // 2 -- coin
@@ -54,10 +80,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
   renderWorld();
 
+
   let newPacman = new Pacman(86,0)
 
   document.addEventListener("keydown", (event)=>{
     if(newPacman.coins == 5400){
+      // let user = User.findUser(userId)
+      // debugger;
       world.innerHTML = newPacman.win()
     }
     const keyName = event.key
@@ -223,6 +252,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   })
 
+
 //level up on click once level is complete
 document.addEventListener("click", (event)=>{
   if (event.target.id === "levelup"){
@@ -230,10 +260,10 @@ document.addEventListener("click", (event)=>{
   }
 })
 
-//replay same leven on click after losing
+//replay same level on click after losing
 document.addEventListener("click", (event)=>{
   if (event.target.id === "playagain"){
-    
+    debugger;
   }
 })
 

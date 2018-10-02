@@ -1,5 +1,6 @@
 class User {
   constructor(userJsonObj){
+    this.id = userJsonObj.id,
     this.name = userJsonObj.name,
     this.high_score = userJsonObj.high_score,
     User.all.push(this)
@@ -13,6 +14,11 @@ class User {
     </form>
     `
   }
+
+  static findUser(id){
+    return User.all.find((user)=> user.id == id)
+  }
+
 }
 
 User.all = [];
