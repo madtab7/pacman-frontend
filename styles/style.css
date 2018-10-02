@@ -20,9 +20,17 @@ p {
   color: yellow;
 }
 
-#levelup {
+#levelup, #playagain {
   border: 2px solid yellow;
   line-height: 30px;
+}
+
+#username {
+  color: white;
+}
+
+#user-submit{
+  color: white;
 }
 
 .pacman-world{

@@ -7,6 +7,7 @@ class Pacman{
   win(){
     return `
     <h3>YOU WIN!</h3>
+    <br>
     <p id="levelup">  Next Level</p>
 
     `
@@ -15,7 +16,10 @@ class Pacman{
   lose(){
     return `
     <h3>YOU LOSE!</h3>
-    <p>Highscore: ${this.coins}
+    <br>
+    <p>Highscore: ${this.coins}</p>
+    <br>
+    <p id="playagain">Play Again</p>
     `
   }
 

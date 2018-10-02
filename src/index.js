@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', (event) => {
 
 
-
-
   // set up game board & corresponding elements
   const map =[
   [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,8],
@@ -18,6 +16,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   //render pacman world
   const world = document.getElementById("pacman-world")
+
+  // render form for username
+    // on submit, renderWorld()
+
+  // world.innerHTML = User.renderForm();
+
+
+  // 1 -- wall
+  // 2 -- coin
+  // 3 -- ground
+  // 5 -- pacman
+  // 8 -- linebreak
 
   function renderWorld(){
     world.innerHTML = ''; //empty from previous
@@ -217,6 +227,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
 document.addEventListener("click", (event)=>{
   if (event.target.id === "levelup"){
     debugger;
+  }
+})
+
+//replay same leven on click after losing
+document.addEventListener("click", (event)=>{
+  if (event.target.id === "playagain"){
+    
   }
 })
 
