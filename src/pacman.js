@@ -4,6 +4,21 @@ class Pacman{
     this.coins = coins
   }
 
+  win(){
+    return `
+    <h3>YOU WIN!</h3>
+    <p id="levelup">  Next Level</p>
+
+    `
+  }
+
+  lose(){
+    return `
+    <h3>YOU LOSE!</h3>
+    <p>Highscore: ${this.coins}
+    `
+  }
+
 
 
 

@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
   // set up game board & corresponding elements
-  const map = [
+  const map =[
   [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,8],
   [1,1,1,1,2,2,2,2,2,1,2,2,2,2,2,1,1,1,1,8],
   [1,1,1,1,2,1,1,1,2,1,2,1,1,1,2,1,1,1,1,8],
@@ -45,13 +45,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
   renderWorld();
 
   let newPacman = new Pacman(86,0)
-  // while(newPacman.coins = 5400){
-  //   let win = document.createElement("div")
-  //   world.innerHTML = win
-  //   win.innerText = "YOU WON!"
-  // }
 
   document.addEventListener("keydown", (event)=>{
+    if(newPacman.coins == 5400){
+      world.innerHTML = newPacman.win()
+    }
     const keyName = event.key
     console.log(keyName)
     const counter = document.getElementById("coincountermotherfucker")
@@ -119,6 +117,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   })
 
+
   let ghost1 = new Ghost(64)
   //event listener to start ghost movements
   document.addEventListener("keydown", (event)=>{
@@ -158,6 +157,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
         oldGhostPosition.removeAttribute("data-id")
         predictivePosition.dataset.id = "ghost"
       }
+    }
+
+    let ghostPosition = document.getElementById(ghost1.position)
+    if(ghostPosition.id == newPacman.position){
+      world.innerHTML = newPacman.lose()
     }
 
   })
@@ -202,9 +206,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
         predictivePosition.dataset.id = "ghost"
       }
     }
+    let ghostPosition = document.getElementById(ghost2.position)
+    if(ghostPosition.id == newPacman.position){
+      world.innerHTML = newPacman.lose()
+    }
 
   })
 
+//level up on click once level is complete
+document.addEventListener("click", (event)=>{
+  if (event.target.id === "levelup"){
+    debugger;
+  }
+})
 
 
 });

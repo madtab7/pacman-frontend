@@ -16,6 +16,15 @@ body {
   font-family: 'Press Start 2P', cursive;
 }
 
+p {
+  color: yellow;
+}
+
+#levelup {
+  border: 2px solid yellow;
+  line-height: 30px;
+}
+
 .pacman-world{
   margin: auto;
   width: 80%;
