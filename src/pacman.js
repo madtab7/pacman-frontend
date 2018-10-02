@@ -3,7 +3,7 @@ class Pacman{
     this.position = position,
     this.coins = coins
   }
-  
+
 
 
 

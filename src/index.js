@@ -45,13 +45,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
   renderWorld();
 
   let newPacman = new Pacman(86,0)
-
+  // while(newPacman.coins = 5400){
+  //   let win = document.createElement("div")
+  //   world.innerHTML = win
+  //   win.innerText = "YOU WON!"
+  // }
 
   document.addEventListener("keydown", (event)=>{
     const keyName = event.key
     console.log(keyName)
     const counter = document.getElementById("coincountermotherfucker")
-
     if(event.key === "ArrowUp"){
       let oldPosition = document.getElementById(newPacman.position)
       let predictivePosition = document.getElementById(newPacman.position-19)
@@ -65,6 +68,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         predictivePosition.removeAttribute("class")
         oldPosition.className = 'ground'
         predictivePosition.className = 'pacman'
+
       }
     } else if (event.key === "ArrowDown"){
       let oldPosition = document.getElementById(newPacman.position)
@@ -113,8 +117,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
       }
     }
 
-
-
   })
 
   let ghost1 = new Ghost(64)
@@ -161,7 +163,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   })
 
   let ghost2 = new Ghost(108)
-
+  //event listener for ghost 2
   document.addEventListener("keydown", (event)=>{
     let ghost2Location = document.getElementById(ghost2.position)
     ghost2Location.dataset.id = "ghost"
@@ -202,6 +204,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
   })
+
 
 
 });

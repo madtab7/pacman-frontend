@@ -1,52 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 
 * {
-  outline: 1px dotted purple;
+  /*outline: 1px dotted purple;*/
+  background-color: black;
   }
 
 h1 {
   text-align: center;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+}
+
+body {
+  color: white;
+  font-family: 'Press Start 2P', cursive;
 }
 
 .pacman-world{
   margin: auto;
-  width: 50%;
+  width: 80%;
   border: 3px solid black;
-  padding: 10px;
+  padding: 40px;
+  position: absolute;
 }
 
 .wall {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   background-color: blue;
   display: inline-block;
 }
 
 .coin {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
+  background-image: url('../images/dot.png');
+  background-position: center;
+  background-repeat: no-repeat;
   background-color: black;
-  border-radius: 80%;
   display: inline-block;
 }
 
 .ground {
-  width: 30px;
-  height: 30px;
-  background-color: white;
+  width: 40px;
+  height: 40px;
+  background-color: black;
   display: inline-block;
 }
 
 div[data-id="ghost"] {
-  width: 30px;
-  height: 30px;
-  background-color: red;
+  width: 40px;
+  height: 40px;
+  background-image: url('../images/ghost.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: black;
   display: inline-block;
 }
 
 .pacman {
-  width: 30px;
-  height: 30px;
-  background-image: url('../images/pacman.png');
+  width: 40px;
+  height: 40px;
+  background-image: url('../images/pacman-open.png');
+  background-color: black;
   background-repeat: no-repeat;
   background-position: center;
   display: inline-block;
