@@ -56,23 +56,30 @@ document.addEventListener('DOMContentLoaded', (event) => {
   document.addEventListener("keydown", (event)=>{
     const keyName = event.key
     console.log(keyName)
+    const counter = document.getElementById("coincountermotherfucker")
 
     if(event.key === "ArrowUp"){
       let oldPosition = document.getElementById(newPacman.position)
       let predictivePosition = document.getElementById(newPacman.position-19)
       if (predictivePosition.className !== "wall"){
+        if(predictivePosition.className == "coin"){
+          newPacman.coins += 100
+          counter.innerText = `${newPacman.coins}`
+        }
         newPacman.position = parseInt(predictivePosition.id)
         oldPosition.removeAttribute("class")
         predictivePosition.removeAttribute("class")
         oldPosition.className = 'ground'
         predictivePosition.className = 'pacman'
-        //currently leaves pacman div if it hits a wall
-        //account for coins
       }
     } else if (event.key === "ArrowDown"){
       let oldPosition = document.getElementById(newPacman.position)
       let predictivePosition = document.getElementById(newPacman.position+19)
       if (predictivePosition.className !== "wall"){
+        if(predictivePosition.className == "coin"){
+          newPacman.coins += 100
+          counter.innerText = `${newPacman.coins}`
+        }
         newPacman.position = parseInt(predictivePosition.id)
         console.log(oldPosition)
         console.log(predictivePosition)
@@ -86,16 +93,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
       let oldPosition = document.getElementById(newPacman.position)
       let predictivePosition = document.getElementById(newPacman.position+1)
       if (predictivePosition.className !== "wall"){
+        if(predictivePosition.className == "coin"){
+          newPacman.coins += 100
+          counter.innerText = `${newPacman.coins}`
+        }
         newPacman.position = parseInt(predictivePosition.id)
         oldPosition.removeAttribute("class")
         predictivePosition.removeAttribute("class")
         oldPosition.className = 'ground'
         predictivePosition.className = 'pacman'
-      }  
+      }
     } else if(event.key === "ArrowLeft"){
       let oldPosition = document.getElementById(newPacman.position)
       let predictivePosition = document.getElementById(newPacman.position-1)
       if (predictivePosition.className !== "wall"){
+        if(predictivePosition.className == "coin"){
+          newPacman.coins += 100
+          counter.innerText = `${newPacman.coins}`
+        }
         newPacman.position = parseInt(predictivePosition.id)
         oldPosition.removeAttribute("class")
         predictivePosition.removeAttribute("class")
