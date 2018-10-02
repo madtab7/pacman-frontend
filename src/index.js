@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
   // set up game board & corresponding elements
+    // array of arrays for additional levels, pass map[x] into renderWorld function
   const map =[
   [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,8],
   [1,1,1,1,2,2,2,2,2,1,2,2,2,2,2,1,1,1,1,8],
@@ -13,6 +14,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   [1,1,1,1,2,2,2,2,2,1,2,2,2,2,2,1,1,1,1,8],
   [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,8]
 ]
+
 
   //render pacman world
   const world = document.getElementById("pacman-world")
@@ -55,7 +57,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // 5 -- pacman
   // 8 -- linebreak
 
-  function renderWorld(level){
+  function renderWorld(){
     world.innerHTML = ''; //empty from previous
     var counter = 1;
     for (let y=0; y< map.length; y++){
@@ -248,6 +250,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let ghostPosition = document.getElementById(ghost2.position)
     if(ghostPosition.id == newPacman.position){
       world.innerHTML = newPacman.lose()
+      // newPacman.coins = user.high_score
     }
 
   })
