@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // 5 -- pacman
   // 8 -- linebreak
 
-  function renderWorld(){
+  function renderWorld(level){
     world.innerHTML = ''; //empty from previous
     var counter = 1;
     for (let y=0; y< map.length; y++){
@@ -263,7 +263,7 @@ document.addEventListener("click", (event)=>{
 //replay same level on click after losing
 document.addEventListener("click", (event)=>{
   if (event.target.id === "playagain"){
-    debugger;
+    // renderWorld()
   }
 })
 
