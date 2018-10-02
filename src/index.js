@@ -2,13 +2,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
 
-  //get high score users
-
-  // pacman position
-  // const pacman = {
-  // x: 6,
-  // y: 4
-  // }
 
   // set up game board & corresponding elements
   const map = [
@@ -52,6 +45,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   renderWorld();
 
   let newPacman = new Pacman(86,0)
+
 
   document.addEventListener("keydown", (event)=>{
     const keyName = event.key
@@ -118,6 +112,95 @@ document.addEventListener('DOMContentLoaded', (event) => {
         predictivePosition.className = 'pacman'
       }
     }
+
+
+
+  })
+
+  let ghost1 = new Ghost(64)
+  //event listener to start ghost movements
+  document.addEventListener("keydown", (event)=>{
+    let ghost1Location = document.getElementById(ghost1.position)
+    ghost1Location.dataset.id = "ghost"
+    let movement = Math.floor(Math.random()*4)+1
+    if (movement == 1){
+      let oldGhostPosition = document.getElementById(ghost1.position)
+      let predictivePosition = document.getElementById(ghost1.position+19)
+      if(predictivePosition.className !== "wall"){
+        ghost1.position = parseInt(predictivePosition.id)
+        oldGhostPosition.removeAttribute("data-id")
+        predictivePosition.dataset.id = "ghost"
+      }
+    }
+    else if (movement == 2){
+      let oldGhostPosition = document.getElementById(ghost1.position)
+      let predictivePosition = document.getElementById(ghost1.position-19)
+      if(predictivePosition.className !== "wall"){
+        ghost1.position = parseInt(predictivePosition.id)
+        oldGhostPosition.removeAttribute("data-id")
+        predictivePosition.dataset.id = "ghost"
+      }
+    } else if (movement == 3){
+      let oldGhostPosition = document.getElementById(ghost1.position)
+      let predictivePosition = document.getElementById(ghost1.position+1)
+      if(predictivePosition.className !== "wall"){
+        ghost1.position = parseInt(predictivePosition.id)
+        oldGhostPosition.removeAttribute("data-id")
+        predictivePosition.dataset.id = "ghost"
+      }
+    } else if (movement == 4){
+      let oldGhostPosition = document.getElementById(ghost1.position)
+      let predictivePosition = document.getElementById(ghost1.position-1)
+      if(predictivePosition.className !== "wall"){
+        ghost1.position = parseInt(predictivePosition.id)
+        oldGhostPosition.removeAttribute("data-id")
+        predictivePosition.dataset.id = "ghost"
+      }
+    }
+
+  })
+
+  let ghost2 = new Ghost(108)
+
+  document.addEventListener("keydown", (event)=>{
+    let ghost2Location = document.getElementById(ghost2.position)
+    ghost2Location.dataset.id = "ghost"
+    let movement = Math.floor(Math.random()*4)+1
+    if (movement == 1){
+      let oldGhostPosition = document.getElementById(ghost2.position)
+      let predictivePosition = document.getElementById(ghost2.position+19)
+      if(predictivePosition.className !== "wall"){
+        ghost2.position = parseInt(predictivePosition.id)
+        oldGhostPosition.removeAttribute("data-id")
+        predictivePosition.dataset.id = "ghost"
+      }
+    }
+    else if (movement == 2){
+      let oldGhostPosition = document.getElementById(ghost2.position)
+      let predictivePosition = document.getElementById(ghost2.position-19)
+      if(predictivePosition.className !== "wall"){
+        ghost2.position = parseInt(predictivePosition.id)
+        oldGhostPosition.removeAttribute("data-id")
+        predictivePosition.dataset.id = "ghost"
+      }
+    } else if (movement == 3){
+      let oldGhostPosition = document.getElementById(ghost2.position)
+      let predictivePosition = document.getElementById(ghost2.position+1)
+      if(predictivePosition.className !== "wall"){
+        ghost2.position = parseInt(predictivePosition.id)
+        oldGhostPosition.removeAttribute("data-id")
+        predictivePosition.dataset.id = "ghost"
+      }
+    } else if (movement == 4){
+      let oldGhostPosition = document.getElementById(ghost2.position)
+      let predictivePosition = document.getElementById(ghost2.position-1)
+      if(predictivePosition.className !== "wall"){
+        ghost2.position = parseInt(predictivePosition.id)
+        oldGhostPosition.removeAttribute("data-id")
+        predictivePosition.dataset.id = "ghost"
+      }
+    }
+
   })
 
 

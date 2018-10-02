@@ -3,10 +3,16 @@
   outline: 1px dotted purple;
   }
 
-/*#pacman-world {
-  height: 70%;
-  width: 80%;
-}*/
+h1 {
+  text-align: center;
+}
+
+.pacman-world{
+  margin: auto;
+  width: 50%;
+  border: 3px solid black;
+  padding: 10px;
+}
 
 .wall {
   width: 30px;
@@ -27,6 +33,13 @@
   width: 30px;
   height: 30px;
   background-color: white;
+  display: inline-block;
+}
+
+div[data-id="ghost"] {
+  width: 30px;
+  height: 30px;
+  background-color: red;
   display: inline-block;
 }
 
