@@ -9,7 +9,6 @@ class Pacman{
     <h3>YOU WIN!</h3>
     <br>
     <p id="levelup">  Next Level</p>
-
     `
   }
 
