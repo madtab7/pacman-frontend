@@ -14,10 +14,16 @@ h1 {
 body {
   color: white;
   font-family: 'Press Start 2P', cursive;
+  text-align: center;
 }
 
 p {
   color: yellow;
+}
+
+#highscores{
+  line-height: 2em;
+  text-align:left;
 }
 
 #levelup, #playagain {

@@ -4,11 +4,17 @@ class Pacman{
     this.coins = coins
   }
 
+  static resetPosition(){
+    this.position = 86
+    this.coins = 0
+  }
+
   win(){
     return `
     <h3>YOU WIN!</h3>
     <br>
     <p id="levelup">  Next Level</p>
+    <br>
     `
   }
 
@@ -19,11 +25,8 @@ class Pacman{
     <p>Highscore: ${this.coins}</p>
     <br>
     <p id="playagain">Play Again</p>
+    <br>
     `
-  }
-  resetPosition(){
-    this.position = 86
-    this.coins = 0
   }
 
 
