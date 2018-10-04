@@ -4,6 +4,6 @@ class Map {
     this.array = array;
     this.maxCoins = maxCoins;
     Map.all.push(this)
-  }
+  }  
 }
 Map.all = [];
