@@ -19,8 +19,8 @@ class User {
     return User.all.find((user)=> user.id == id)
   }
 
-  static updateLoss(player){
-    player.high_score = newPacman.coins
+  static updateLoss(player, newPacman){
+    player.high_score += newPacman.coins
     fetch(`http://localhost:3000/users/${player.id}`, {
       method: 'PATCH',
       headers: {
@@ -34,8 +34,8 @@ class User {
     .then((response) => { return response.json()})
   }
 
-  static updateWin(player){
-    player.high_score = newPacman.coins
+  static updateWin(player, newPacman){
+    player.high_score += newPacman.coins
     fetch(`http://localhost:3000/users/${player.id}`, {
       method: 'PATCH',
       headers: {
@@ -49,23 +49,24 @@ class User {
     .then((response) => { return response.json()})
   }
 
-
-  static topFive(){
-    fetch('http://localhost:3000/users/')
-      .then(response => response.json())
-      .then((jsonData) =>{
-        let sortedData = jsonData.sort(function(a,b){
-          return b.high_score - a.high_score
-        })
-        let sorted = sortedData.slice(0,5)
-        let sortedArr = sorted.map((player)=>{
-          return player.name
-        })
-        sortedArr.forEach((player)=>{
-          return `<li>${player.name}</li>`
-        })
-      })
-  }
+  // 
+  // static topFive(){
+  //   fetch('http://localhost:3000/users/')
+  //     .then(response => response.json())
+  //     .then((jsonData) =>{
+  //       let sortedData = jsonData.sort(function(a,b){
+  //         return b.high_score - a.high_score
+  //       })
+  //       let sorted = sortedData.slice(0,5)
+  //       let sortedArr = sorted.map((player)=>{
+  //         return player.name
+  //       })
+  //       debugger;
+  //       sortedArr.forEach((player)=>{
+  //         return `<li>${player.name}</li>`
+  //       })
+  //     })
+  // }
 
 
 

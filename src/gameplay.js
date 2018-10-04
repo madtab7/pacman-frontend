@@ -19,21 +19,21 @@ const level1 = new Map(1,
     [1,1,1,1,2,1,1,2,2,1,2,2,1,1,2,1,1,1,1,8],
     [1,1,1,1,2,2,2,2,2,1,2,2,2,2,2,1,1,1,1,8],
     [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,8]
-  ], 5400
+  ], 400, 86, 0, 64, 108
 )
 
-const level2 = new Map (2,
+const level2 = new Map (1,
   [
     [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,8], /// level 2
-    [1,2,2,2,2,2,2,2,2,1,2,2,2,2,2,2,2,2,1,8],
+    [1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,8],
     [1,2,2,1,2,1,1,1,2,1,2,1,1,1,2,1,2,2,1,8],
     [1,2,1,1,2,1,2,2,2,2,2,2,2,1,2,1,1,2,1,8],
     [1,2,2,2,2,2,2,1,1,5,1,1,2,2,2,2,2,2,1,8],
     [1,2,1,1,2,1,2,2,2,2,2,2,2,1,2,1,1,2,1,8],
     [1,2,2,1,2,1,1,2,2,1,2,2,1,1,2,1,2,2,1,8],
-    [1,2,2,2,2,2,2,2,2,1,2,2,2,2,2,2,2,2,1,8],
+    [1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,8],
     [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,8]
-  ], 8400
+  ], 8600, 86, 0, 64, 108
 )
 
 // ///////////////////COMMMENT BACK IN FOR BACK END ////////////////////////////
@@ -67,19 +67,34 @@ const level2 = new Map (2,
       })
       // const counterContainer = document.getElementById("counter")
       // let userNum = counterContainer.dataset.id
-      renderWorld(level1);
-      let ghost1 = new Ghost(64)
-      let ghost2 = new Ghost(108)
-      ghostMovement(ghost1)
-      ghostMovement(ghost2)
-      pacmanPlay(level1);
+      var audio = new Audio('sounds/pacman_beginning.wav');
+      audio.play();
+      renderWorld(level2);
+      pacmanPlay(level2);
     }
-    return
   })
 
 // ////////////////////////////////////////////////////////////////////////////////////
-///display top 5 scores:
-let topScores = document.getElementById("highscores")
+
+// ///display top 5 scores:
+// let topScores = document.getElementById("highscores")
+//   fetch('http://localhost:3000/users/')
+//     .then(response => response.json())
+//     .then((jsonData) =>{
+//       let sortedData = jsonData.sort(function(a,b){
+//         return b.high_score - a.high_score
+//       })
+//       let sorted = sortedData.slice(0,5)
+//       let sortedArr = sorted.map((player)=>{
+//         return player.name
+//       })
+//       // debugger;
+//       sortedArr.forEach((player)=>{
+//         debugger;
+//         topScores.innerHTML += `<li>${player.name}</li>`
+//       })
+//     })
+
   // topScores.innerHTML += User.topFive()
 
 
@@ -88,26 +103,24 @@ let topScores = document.getElementById("highscores")
 //replay same level on click after losing
 document.addEventListener("click", (event)=>{
   if (event.target.id === "playagain"){
-    renderWorld(level1);
-    pacmanPlay(level1);
-    newPacman.resetPosition()
+    // renderWorld(level1);
+    // pacmanPlay(level1);
+    // Pacman.resetPosition()
+    location.reload()
   }
 })
 
 
 
-//level up on click once level is complete
+//level 2 on click once level is complete
 document.addEventListener("click", (event)=>{
   if (event.target.id === "levelup"){
-    world.innerHTML = null;
-    pacmanPlay(level2);
-    renderWorld(level2);
-    let ghostPosition = document.getElementById(ghostObj.position)
-    newPacman.resetPosition()
-    // let ghost1 = new Ghost(64)
-    // let ghost2 = new Ghost(108)
-    // ghostMovement(ghost1)
-    // ghostMovement(ghost2)
+    // world.innerHTML = null;
+    // Map.clear()
+    // renderWorld(level2);
+    // Pacman.resetPosition()
+    // pacmanPlay(level2);
+    location.reload()
 
   }
 })
