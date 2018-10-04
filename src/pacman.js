@@ -21,6 +21,10 @@ class Pacman{
     <p id="playagain">Play Again</p>
     `
   }
+  resetPosition(){
+    this.position = 86
+    this.coins = 0
+  }
 
 
 
